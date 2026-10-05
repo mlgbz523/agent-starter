@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+    body {
+      background: #faf8ef;
+      color: #776e65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+    .header {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(36px, 10vw, 48px);
+      font-weight: 800;
+      color: #776e65;
+      line-height: 1;
+    }
+    .status-panel {
+      display: flex;
+      gap: 8px;
+    }
+    .badge {
+      position: relative;
+      background: #bbada0;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-align: center;
+      min-width: 68px;
+    }
+    .score-gain {
+      position: absolute;
+      right: 4px;
+      top: -4px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #8f7a66;
+      opacity: 0;
+      pointer-events: none;
+      animation: float-gain 0.6s ease-out forwards;
+    }
+    @keyframes float-gain {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-18px); }
+    }
+    .badge-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #eee4da;
+    }
+    .badge-val {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .toolbar {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+      gap: 8px;
+    }
+    button {
+      background: #8f7a66;
+      border: none;
+      color: #fff;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.1s ease, background-color 0.15s ease;
+      white-space: nowrap;
+    }
+    button:hover {
+      background: #9f8b77;
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    .board-container {
+      position: relative;
+      background: #bbada0;
+      border-radius: 8px;
+      padding: clamp(8px, 2.5vw, 12px);
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      container-type: inline-size;
+      touch-action: none;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: clamp(8px, 2.5vw, 12px);
+      width: 100%;
+      height: 100%;
+    }
+    .cell {
+      background: rgba(238, 228, 218, 0.35);
+      border-radius: 6px;
+      position: relative;
+    }
+    .tile {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(20px, 8cqi, 32px);
+      font-weight: bold;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      will-change: transform;
+    }
+    .tile-new {
+      animation: pop-in 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+    }
+    .tile-merged {
+      animation: pop-merge 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes pop-in {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.12); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes pop-merge {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+      100% { transform: scale(1); }
+    }
+    .grid-reset {
+      animation: grid-fade 0.25s ease-out;
+    }
+    @keyframes grid-fade {
+      0% { opacity: 0.5; transform: scale(0.97); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .board-shake {
+      animation: board-shake 0.35s ease-in-out;
+    }
+    @keyframes board-shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+    .badge-record {
+      animation: record-glow 0.8s ease-in-out;
+    }
+    @keyframes record-glow {
+      0%, 100% { box-shadow: 0 0 0 rgba(237, 194, 46, 0); }
+      50% { box-shadow: 0 0 14px rgba(237, 194, 46, 0.8); }
+    }
+    .tile[data-val="2"]    { background: #eee4da; color: #776e65; }
+    .tile[data-val="4"]    { background: #ede0c8; color: #776e65; }
+    .tile[data-val="8"]    { background: #f2b179; color: #f9f6f2; }
+    .tile[data-val="16"]   { background: #f59563; color: #f9f6f2; }
+    .tile[data-val="32"]   { background: #f67c5f; color: #f9f6f2; }
+    .tile[data-val="64"]   { background: #f65e3b; color: #f9f6f2; }
+    .tile[data-val="128"]  { background: #edcf72; color: #f9f6f2; font-size: clamp(16px, 6.2cqi, 24px); }
+    .tile[data-val="256"]  { background: #edcc61; color: #f9f6f2; font-size: clamp(16px, 6.2cqi, 24px); }
+    .tile[data-val="512"]  { background: #edc850; color: #f9f6f2; font-size: clamp(16px, 6.2cqi, 24px); }
+    .tile[data-val="1024"] { background: #edc53f; color: #f9f6f2; font-size: clamp(13px, 5cqi, 20px); }
+    .tile[data-val="2048"] { background: #edc22e; color: #f9f6f2; font-size: clamp(13px, 5cqi, 20px); box-shadow: 0 0 12px rgba(237, 194, 46, 0.6); }
+    .tile[data-val="super"]{ background: #3c3a32; color: #f9f6f2; font-size: clamp(11px, 4.2cqi, 18px); }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(238, 228, 218, 0.78);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.95);
+      transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+    .overlay-text {
+      font-size: 32px;
+      font-weight: 800;
+      color: #776e65;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>2048</h1>
+    <div class="status-panel">
+      <div class="badge">
+        <div class="badge-title">Score</div>
+        <div class="badge-val" id="score">0</div>
+      </div>
+      <div class="badge">
+        <div class="badge-title">Best</div>
+        <div class="badge-val" id="best">0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <span>合并相同数字方块达到 <strong>2048</strong></span>
+    <button id="restart-btn">新游戏</button>
+  </div>
+
+  <div class="board-container" id="board-container">
+    <div class="grid" id="grid"></div>
+    <div class="overlay" id="overlay">
+      <div class="overlay-text" id="overlay-text">游戏结束</div>
+      <div style="display: flex; gap: 8px;">
+        <button id="keep-going-btn" style="display: none;">继续挑战</button>
+        <button id="retry-btn">再试一次</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SIZE = 4;
+    let grid = Array.from({ length: SIZE }, () => Array(SIZE).fill(0));
+    let score = 0;
+    let best = Number(localStorage.getItem('2048_best') || 0);
+
+    const gridEl = document.getElementById('grid');
+    const scoreEl = document.getElementById('score');
+    const bestEl = document.getElementById('best');
+    const overlay = document.getElementById('overlay');
+    const overlayText = document.getElementById('overlay-text');
+    const boardContainer = document.getElementById('board-container');
+    const keepGoingBtn = document.getElementById('keep-going-btn');
+
+    bestEl.textContent = best;
+
+    function initCells() {
+      gridEl.innerHTML = '';
+      for (let i = 0; i < SIZE * SIZE; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'cell';
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        cell.appendChild(tile);
+        gridEl.appendChild(cell);
+      }
+    }
+
+    function showScoreGain(gain) {
+      const el = document.createElement('div');
+      el.className = 'score-gain';
+      el.textContent = `+${gain}`;
+      el.addEventListener('animationend', () => el.remove());
+      scoreEl.parentElement.appendChild(el);
+    }
+
+    function render(outcome = null, newPos = null) {
+      const cells = gridEl.children;
+      const stepX = cells.length > 1 ? (cells[1].offsetLeft - cells[0].offsetLeft) : 0;
+      const stepY = cells.length > SIZE ? (cells[SIZE].offsetTop - cells[0].offsetTop) : 0;
+
+      for (let r = 0; r < SIZE; r++) {
+        for (let c = 0; c < SIZE; c++) {
+          const val = grid[r][c];
+          const cell = cells[r * SIZE + c];
+          const tile = cell.firstElementChild;
+          tile.textContent = val ? val : '';
+          tile.dataset.val = val > 2048 ? 'super' : (val || '');
+          tile.className = 'tile';
+
+          if (!val) {
+            tile.style.transform = '';
+            tile.style.transition = '';
+            continue;
+          }
+
+          if (newPos && newPos.r === r && newPos.c === c) {
+            tile.style.transform = '';
+            tile.style.transition = '';
+            void tile.offsetWidth;
+            tile.classList.add('tile-new');
+          } else if (outcome) {
+            const item = outcome.next[r][c];
+            const isMerged = outcome.merged[r][c];
+            const from = item.from;
+            if (from && (from.r !== r || from.c !== c)) {
+              const dx = (from.c - c) * stepX;
+              const dy = (from.r - r) * stepY;
+              tile.style.transition = 'none';
+              tile.style.transform = `translate(${dx}px, ${dy}px)`;
+              requestAnimationFrame(() => {
+                tile.style.transition = 'transform 120ms cubic-bezier(0.25, 1, 0.5, 1)';
+                tile.style.transform = 'translate(0, 0)';
+                if (isMerged) {
+                  setTimeout(() => tile.classList.add('tile-merged'), 110);
+                }
+              });
+            } else if (isMerged) {
+              tile.style.transform = '';
+              tile.style.transition = '';
+              void tile.offsetWidth;
+              tile.classList.add('tile-merged');
+            } else {
+              tile.style.transform = '';
+              tile.style.transition = '';
+            }
+          } else {
+            tile.style.transform = '';
+            tile.style.transition = '';
+          }
+        }
+      }
+      scoreEl.textContent = score;
+      if (score > best) {
+        best = score;
+        bestEl.textContent = best;
+        localStorage.setItem('2048_best', best);
+        bestEl.parentElement.classList.add('badge-record');
+        setTimeout(() => bestEl.parentElement.classList.remove('badge-record'), 800);
+      }
+    }
+
+    function addRandomTile() {
+      const emptyCells = [];
+      for (let r = 0; r < SIZE; r++) {
+        for (let c = 0; c < SIZE; c++) {
+          if (grid[r][c] === 0) emptyCells.push({ r, c });
+        }
+      }
+      if (emptyCells.length === 0) return null;
+      const spot = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+      grid[spot.r][spot.c] = Math.random() < 0.9 ? 2 : 4;
+      return spot;
+    }
+
+    let turnGain = 0;
+    let hasWon = false;
+    let justWon = false;
+
+    function slideRow(row) {
+      const arr = row.filter(item => item.val > 0);
+      const res = [];
+      const merged = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (i < arr.length - 1 && arr[i].val === arr[i + 1].val) {
+          const val = arr[i].val * 2;
+          res.push({ val, from: arr[i + 1].from });
+          merged.push(true);
+          turnGain += val;
+          if (val === 2048 && !hasWon) {
+            justWon = true;
+            hasWon = true;
+          }
+          i++;
+        } else {
+          res.push(arr[i]);
+          merged.push(false);
+        }
+      }
+      while (res.length < SIZE) {
+        res.push({ val: 0, from: null });
+        merged.push(false);
+      }
+      return { res, merged };
+    }
+
+    function processRows(matrix) {
+      const next = [];
+      const merged = [];
+      for (const row of matrix) {
+        const item = slideRow(row);
+        next.push(item.res);
+        merged.push(item.merged);
+      }
+      return { next, merged };
+    }
+
+    const transpose = m => m[0].map((_, i) => m.map(row => row[i]));
+    const reverseRows = m => m.map(row => [...row].reverse());
+
+    function buildItemGrid() {
+      return grid.map((row, r) => row.map((val, c) => ({ val, from: { r, c } })));
+    }
+
+    function moveLeft(itemGrid) {
+      return processRows(itemGrid);
+    }
+
+    function moveRight(itemGrid) {
+      const { next, merged } = processRows(reverseRows(itemGrid));
+      return { next: reverseRows(next), merged: reverseRows(merged) };
+    }
+
+    function moveUp(itemGrid) {
+      const { next, merged } = processRows(transpose(itemGrid));
+      return { next: transpose(next), merged: transpose(merged) };
+    }
+
+    function moveDown(itemGrid) {
+      const { next, merged } = processRows(reverseRows(transpose(itemGrid)));
+      return { next: transpose(reverseRows(next)), merged: transpose(reverseRows(merged)) };
+    }
+
+    function move(dir) {
+      turnGain = 0;
+      justWon = false;
+      const itemGrid = buildItemGrid();
+      let outcome;
+      if (dir === 'left') outcome = moveLeft(itemGrid);
+      else if (dir === 'right') outcome = moveRight(itemGrid);
+      else if (dir === 'up') outcome = moveUp(itemGrid);
+      else if (dir === 'down') outcome = moveDown(itemGrid);
+
+      const nextVals = outcome.next.map(row => row.map(cell => cell.val));
+      const changed = JSON.stringify(nextVals) !== JSON.stringify(grid);
+      if (changed) {
+        grid = nextVals;
+        score += turnGain;
+        if (turnGain > 0) showScoreGain(turnGain);
+        const newPos = addRandomTile();
+        render(outcome, newPos);
+
+        if (justWon) {
+          overlayText.textContent = '达成 2048！';
+          keepGoingBtn.style.display = 'inline-block';
+          overlay.classList.add('active');
+        } else if (checkGameOver()) {
+          boardContainer.classList.add('board-shake');
+          setTimeout(() => boardContainer.classList.remove('board-shake'), 400);
+          overlayText.textContent = '游戏结束';
+          keepGoingBtn.style.display = 'none';
+          overlay.classList.add('active');
+        }
+      }
+    }
+
+    function checkGameOver() {
+      for (let r = 0; r < SIZE; r++) {
+        for (let c = 0; c < SIZE; c++) {
+          if (grid[r][c] === 0) return false;
+          if (c < SIZE - 1 && grid[r][c] === grid[r][c + 1]) return false;
+          if (r < SIZE - 1 && grid[r][c] === grid[r + 1][c]) return false;
+        }
+      }
+      return true;
+    }
+
+    function restart() {
+      grid = Array.from({ length: SIZE }, () => Array(SIZE).fill(0));
+      score = 0;
+      hasWon = false;
+      overlay.classList.remove('active');
+      keepGoingBtn.style.display = 'none';
+      gridEl.classList.remove('grid-reset');
+      void gridEl.offsetWidth;
+      gridEl.classList.add('grid-reset');
+      addRandomTile();
+      addRandomTile();
+      render();
+    }
+
+    window.addEventListener('keydown', e => {
+      const keys = {
+        ArrowLeft: 'left', KeyA: 'left',
+        ArrowRight: 'right', KeyD: 'right',
+        ArrowUp: 'up', KeyW: 'up',
+        ArrowDown: 'down', KeyS: 'down'
+      };
+      if (keys[e.code]) {
+        e.preventDefault();
+        move(keys[e.code]);
+      }
+    });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    window.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      if (Math.max(absDx, absDy) < 30) return;
+      if (absDx > absDy) {
+        move(dx > 0 ? 'right' : 'left');
+      } else {
+        move(dy > 0 ? 'down' : 'up');
+      }
+    });
+
+    document.getElementById('restart-btn').addEventListener('click', restart);
+    document.getElementById('retry-btn').addEventListener('click', restart);
+    keepGoingBtn.addEventListener('click', () => overlay.classList.remove('active'));
+
+    initCells();
+    restart();
+  </script>
+</body>
+</html>
