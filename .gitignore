@@ -1,0 +1,29 @@
+# 凭证与密钥 (Secrets & Credentials)
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# 操作系统与IDE缓存
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Python 构建与运行时缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+dist/
+*.egg-info/
+
+# 日志
+*.log
