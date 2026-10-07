@@ -7,13 +7,13 @@
 ## 📌 PM 专属进度速览区 (人类可读)
 - **已完成**：
   1. 反重力目录迁移成功（C 盘已安全释放 3.1GB，传送门无缝生效）；
-  2. 全套 C 盘急救清理与源头重定向工具箱物理隔离至 [`E:\DiskCleanToolkit\`](file:///E:/DiskCleanToolkit/)；
-  3. `sandbox/` 测试样例库全面物理隔离重组，扫雷（[`project_minesweeper/`](sandbox/project_minesweeper/)）与 2048（[`project_2048/`](sandbox/project_2048/)）各自完全独立自包含、双击即测；
+  2. `sandbox/` 物理隔离体系全面就绪：扫雷（[`project_minesweeper/`](sandbox/project_minesweeper/)）、2048（[`project_2048/`](sandbox/project_2048/)）与全功能运维工具箱（[`project_toolkit/`](sandbox/project_toolkit/)）三者完全自包含并列隔离，开箱即用；
+  3. 项目根目录彻底移除 `tools/` 文件夹，业务工程根目录达到极致纯净；
   4. 历史方案与工具资产已在 [`docs/archive/`](docs/archive/) 完备归档，既有测试命令 `node --test` 实测持续 100% 全绿（8/8 项通过）。
 - **进行中**：无。
 - **卡住了**：无。
 - **需要你决定的事**：无。
-- **👉 下一步你要做什么**：随时在 `sandbox/` 中体验独立测试项目，或在 `tools/打开磁盘工具箱.bat` 运行磁盘瘦身；如需开展新的业务研发，随时直接下达需求即可。
+- **👉 下一步你要做什么**：随时在 `sandbox/project_toolkit/` 运行磁盘清理总控台，或体验小游戏；准备就绪后随时下达正式业务需求即可。
 
 ---
 

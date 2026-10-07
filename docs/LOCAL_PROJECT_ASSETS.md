@@ -16,8 +16,8 @@
 | **应急响应与度量** | [`docs/INCIDENT_RESPONSE.md`](docs/INCIDENT_RESPONSE.md) | 已生效（线上止血原则、三句话白话诊断、每周质量与额度度量） |
 | **PM 技术词典** | [`docs/GLOSSARY.md`](docs/GLOSSARY.md) | 已生效（技术术语大白话索引与生活类比，Agent 自动维护） |
 | **项目环境记录** | [`docs/PROJECT_ENV.md`](docs/PROJECT_ENV.md) | 已建立模板（初始为“未确认项目”，PM 确认项目后由 Agent 动态维护） |
-| **Agent 测试样例库** | [`sandbox/`](sandbox/) | 物理隔离（`project_minesweeper/` 扫雷与 `project_2048/` 2048 小游戏完全独立互不干扰，仅用于测试 Agent 能力） |
-| **磁盘运维与瘦身工具箱** | [`E:\DiskCleanToolkit\`](file:///E:/DiskCleanToolkit/) | 物理隔离生效（全套 C 盘清理、源头重定向与 AppData 搬迁工具，业务库内仅留 `tools/` 快捷指路入口） |
+| **Agent 测试样例与工具沙箱** | [`sandbox/`](sandbox/) | 物理隔离（`project_minesweeper/` 扫雷、`project_2048/` 2048 与 `project_toolkit/` 运维工具箱三者完全独立互不干扰，工程根目录极致纯净） |
+| **磁盘运维独立工具箱** | [`sandbox/project_toolkit/`](sandbox/project_toolkit/) 与 [`E:\DiskCleanToolkit\`](file:///E:/DiskCleanToolkit/) | 物理隔离生效（全套 C 盘清理、源头重定向与 AppData 搬迁工具，随沙箱独立存储与运行） |
 | **项目历史资产归档** | [`docs/archive/`](docs/archive/) | 已建立生效（历史任务计划与方案持久化归档留痕） |
 | **契约测试门禁** | [`.agents/rules/02-contract-and-testing.md`](.agents/rules/02-contract-and-testing.md) | 已生效（锁定模型接口，绿色测试通过方可交付） |
 | **防幻觉探针规范**| [`.agents/rules/03-hallucination-probes.md`](.agents/rules/03-hallucination-probes.md) | 已生效（包含 Python / Node.js 单行预检命令） |
