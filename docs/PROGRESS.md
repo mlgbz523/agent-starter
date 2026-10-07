@@ -5,11 +5,14 @@
 ---
 
 ## 📌 PM 专属进度速览区 (人类可读)
-- **已完成**：全套工程约束与硬约束全盘落地，实测 4 大顽疾治理闭环，思维导图已全量同步最新里程碑与 12 份实战资产。
-- **进行中**：无。
+- **已完成**：
+  1. 反重力目录迁移成功（C 盘已安全释放 3.1GB，传送门无缝生效）；
+  2. 全套 C 盘急救清理、源头永久重定向与 AppData 定向搬迁工具已打包并物理隔离至 [`E:\DiskCleanToolkit\`](file:///E:/DiskCleanToolkit/)（100% 完整保留系统休眠，完全独立于业务代码）；
+  3. 项目工程内 `tools/` 目录完成瘦身隔离，仅保留详细说明文档 [`tools/README.md`](file:///E:/workSpace/planProject/tools/README.md) 与快捷启动器 [`tools/打开磁盘工具箱.bat`](file:///E:/workSpace/planProject/tools/%E6%89%93%E5%BC%80%E7%A3%81%E7%9B%98%E5%B7%A5%E5%85%B7%E7%AE%B1.bat)。
+- **进行中**：工具箱全套就绪，等待 PM 随时按需使用。
 - **卡住了**：无。
 - **需要你决定的事**：无。
-- **👉 下一步你要做什么**：查阅 [docs/现代 AI Agent 工程化研发实战思维导图.md](现代%20AI%20Agent%20工程化研发实战思维导图.md)，随时开启正式业务需求开发。
+- **👉 下一步你要做什么**：想要清理或重定向时，直接双击工程内的 [`tools/打开磁盘工具箱.bat`](file:///E:/workSpace/planProject/tools/%E6%89%93%E5%BC%80%E7%A3%81%E7%9B%98%E5%B7%A5%E5%85%B7%E7%AE%B1.bat)（或打开 `E:\DiskCleanToolkit\toolbox.bat`）输入数字 1、2、3 运行即可。
 
 ---
 
