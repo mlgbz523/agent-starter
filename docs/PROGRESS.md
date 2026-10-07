@@ -7,12 +7,13 @@
 ## 📌 PM 专属进度速览区 (人类可读)
 - **已完成**：
   1. 反重力目录迁移成功（C 盘已安全释放 3.1GB，传送门无缝生效）；
-  2. 全套 C 盘急救清理、源头永久重定向与 AppData 定向搬迁工具已打包并物理隔离至 [`E:\DiskCleanToolkit\`](file:///E:/DiskCleanToolkit/)（100% 完整保留系统休眠，完全独立于业务代码）；
-  3. 项目工程内 `tools/` 目录完成瘦身隔离，仅保留详细说明文档 [`tools/README.md`](file:///E:/workSpace/planProject/tools/README.md) 与快捷启动器 [`tools/打开磁盘工具箱.bat`](file:///E:/workSpace/planProject/tools/%E6%89%93%E5%BC%80%E7%A3%81%E7%9B%98%E5%B7%A5%E5%85%B7%E7%AE%B1.bat)。
-- **进行中**：工具箱全套就绪，等待 PM 随时按需使用。
+  2. 全套 C 盘急救清理与源头重定向工具箱物理隔离至 [`E:\DiskCleanToolkit\`](file:///E:/DiskCleanToolkit/)；
+  3. `sandbox/` 测试样例库全面物理隔离重组，扫雷（[`project_minesweeper/`](sandbox/project_minesweeper/)）与 2048（[`project_2048/`](sandbox/project_2048/)）各自完全独立自包含、双击即测；
+  4. 历史方案与工具资产已在 [`docs/archive/`](docs/archive/) 完备归档，既有测试命令 `node --test` 实测持续 100% 全绿（8/8 项通过）。
+- **进行中**：无。
 - **卡住了**：无。
 - **需要你决定的事**：无。
-- **👉 下一步你要做什么**：想要清理或重定向时，直接双击工程内的 [`tools/打开磁盘工具箱.bat`](file:///E:/workSpace/planProject/tools/%E6%89%93%E5%BC%80%E7%A3%81%E7%9B%98%E5%B7%A5%E5%85%B7%E7%AE%B1.bat)（或打开 `E:\DiskCleanToolkit\toolbox.bat`）输入数字 1、2、3 运行即可。
+- **👉 下一步你要做什么**：随时在 `sandbox/` 中体验独立测试项目，或在 `tools/打开磁盘工具箱.bat` 运行磁盘瘦身；如需开展新的业务研发，随时直接下达需求即可。
 
 ---
 
