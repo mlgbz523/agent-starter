@@ -1,28 +1,30 @@
 # 项目交接与执行进度看板 (PROGRESS.md)
 
 > **使用说明**：本文件是多会话交接的核心记忆中枢。每个任务提交 Git 前由 Agent 强制更新，新会话启动时由 Agent 最先读取。
+> 🔒 **可点击直链规范**：所有指向工作区文件的链接强制采用 `file:///` 绝对协议，确保在任意微型网页（Webview）或预览界面中 100% 秒开，绝不触发系统找不到文件错误。
 
 ---
 
 ## 📌 PM 专属进度速览区 (人类可读)
 - **已完成**：
   1. 反重力目录迁移成功（C 盘已安全释放 3.1GB，传送门无缝生效）；
-  2. `sandbox/` 物理隔离体系全面就绪：扫雷（[`project_minesweeper/`](sandbox/project_minesweeper/)）、2048（[`project_2048/`](sandbox/project_2048/)）与全功能运维工具箱（[`project_toolkit/`](sandbox/project_toolkit/)）三者完全自包含并列隔离，开箱即用；
+  2. `sandbox/` 物理隔离体系全面就绪：扫雷（[`project_minesweeper/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/project_minesweeper/)）、2048（[`project_2048/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/project_2048/)）与全功能运维工具箱（[`project_toolkit/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/project_toolkit/)）三者完全自包含并列隔离，开箱即用；
   3. 项目根目录彻底移除 `tools/` 文件夹，业务工程根目录达到极致纯净；
-  5. 【01~06 规则闭环与切片解耦】：同步 `01-architecture-and-modularity.md`，全量原规则镜像安全归档于 `docs/archive/rules_backup_20261008/`；
-  6. 【还原点机制解耦实测】：完成工作区干净（基线 Hash 记录与一键 reset/clean 归位）与工作区有改动（`git stash push -u` 按名称生成快照并保留工作区）双场景验证，保住未提交修改且零 Commit、零远程推送；
-  7. 【一手真理源工具链实测】：实测调用 `free-search` MCP 工具（`research`、`fetch_batch`、`compare`），100% 真实可用并一手穿透时效性；
-  8. 【顶层宪法内嵌三大核心卡片骨架】：`.agents/AGENTS.md` 正式嵌入【PM 业务决策请求】、【高危操作审批申请】、【交付完成声明去伪存真矩阵】，彻底根除智能体自编格式；
-  9. 【全套门禁持续全绿】：核心测试 `node --test` (8/8 通过)，Pre-commit 门禁 100% 通过（退出码 0）。
+  4. 【01~06 规则闭环与切片解耦】：同步 `01-architecture-and-modularity.md`，全量原规则镜像安全归档于 [`docs/archive/rules_backup_20261008/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/archive/rules_backup_20261008/)；
+  5. 【还原点机制解耦实测】：完成工作区干净（基线 Hash 记录与一键 reset/clean 归位）与工作区有改动（`git stash push -u` 按名称生成快照并保留工作区）双场景验证，保住未提交修改且零 Commit、零远程推送；
+  6. 【一手真理源工具链实测】：实测调用 `free-search` MCP 工具（`research`、`fetch_batch`、`compare`），100% 真实可用并一手穿透时效性；
+  7. 【顶层宪法内嵌三大核心卡片骨架】：[`.agents/AGENTS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/AGENTS.md) 正式嵌入【PM 业务决策请求】、【高危操作审批申请】、【交付完成声明去伪存真矩阵】，彻底根除智能体自编格式；
+  8. 【全套门禁持续全绿】：核心测试 `node --test` (8/8 通过)，Pre-commit 门禁 100% 通过（退出码 0）；
+  9. 【文件链接绝对协议铁律生效】：经 PM 审批通过，在 [`.agents/AGENTS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/AGENTS.md) 与 [`.agents/rules/05-pm-interaction-templates.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/05-pm-interaction-templates.md) 中明文确立文件链接绝对协议铁律，所有卡片与看板强制采用 `file:///` 协议绝对路径，彻底根除因 Webview 相对路径导致 Windows 底层 `GetFileAttributesEx` 报错。
 - **进行中**：无。
 - **卡住了**：无。
-- **需要你决定的事**：无（后续按需选择域名白名单最终方案）。
-- **👉 下一步你要做什么**：无（当前任务已完结，随时下达新任务）。
+- **需要你决定的事**：无。
+- **👉 下一步你要做什么**：无（规则固化已完成，随时下达新任务）。
 
 ---
 
 ## 一、 当前全局开发状态
-- **当前开发阶段**：01~06 六大支柱闭环与顶层宪法冲突消解落地
+- **当前开发阶段**：文件绝对协议铁律固化与全量卡片模板净化
 - **最后更新时间**：2026-10-08
 - **活跃开发分支**：`move_antigravity_working_directory`
 - **自动化门禁状态**：🟢 测试全绿 (`node --test`)、🟢 Pre-commit 全部通过
@@ -33,21 +35,21 @@
 
 | 模块名称 | 负责人/Agent | 状态 | 交付物说明 |
 | :--- | :--- | :--- | :--- |
-| 工作区工程宪法 (`AGENTS.md`) | Agent + PM | 已完成 (定稿) | 通用准则与指针、PM 友好假设、四层复用、高危点头附影响、防作弊、规则保护 |
-| 项目环境动态记录 | Agent + PM | 已就绪模板 | `docs/PROJECT_ENV.md`（初始为“未确认项目”，技术栈与命令由 Agent 在 PM 确认后动态维护） |
-| Agent 测试基准样例 | Agent | 已隔离 | `sandbox/`（扫雷游戏等样例物理隔离，附 README 严禁当作正式环境） |
-| PM 实战使用手册 | Agent | 已完成 | `docs/PM_HANDBOOK.md`（提需求、三段式演示、叫停信号、零技术决策） |
-| PM 交互卡片模板库 | Agent | 已完成 | `.agents/rules/05-pm-interaction-templates.md`（决策卡片、审批卡片、三分法） |
-| 外部依赖安全细则 | Agent | 已完成 | `.agents/rules/04-reuse-and-supply-chain.md` 供应链背书卡片 |
-| 全景工程实战思维导图 | Agent + PM | 已完成 (定稿) | `docs/现代 AI Agent 工程化研发实战思维导图.md`（7 大支柱全景图） |
-| 项目安全与应急 SOP | Agent | 已完成 | `docs/DEPLOYMENT_SECURITY.md`、`docs/INCIDENT_RESPONSE.md` |
-| PM 技术词典与学习路线 | Agent | 已完成 | `docs/GLOSSARY.md`（三信号、三阶段学习、白话类比） |
-| 本地配置与资产清单 | Agent | 已完成 | `docs/LOCAL_PROJECT_ASSETS.md`（真实物理路径对照） |
+| 工作区工程宪法 (`AGENTS.md`) | Agent + PM | 已完成 (定稿) | 包含导师机制、白话解释、Diff铁律、定向检索、2次熔断、三红线、复用边界、PM五大权限红线、**文件绝对协议铁律** |
+| 项目环境动态记录 | Agent + PM | 已就绪模板 | [`docs/PROJECT_ENV.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/PROJECT_ENV.md)（初始为“未确认项目”，技术栈与命令由 Agent 在 PM 确认后动态维护） |
+| Agent 测试基准样例 | Agent | 已隔离 | [`sandbox/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/)（扫雷游戏等样例物理隔离，附 README 严禁当作正式环境） |
+| PM 实战使用手册 | Agent | 已完成 | [`docs/PM_HANDBOOK.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/PM_HANDBOOK.md)（提需求、三段式演示、叫停信号、零技术决策） |
+| PM 交互卡片模板库 | Agent | 已完成 | [`.agents/rules/05-pm-interaction-templates.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/05-pm-interaction-templates.md)（决策卡片、审批卡片、三分法、**绝对直链规范**） |
+| 外部依赖安全细则 | Agent | 已完成 | [`.agents/rules/04-reuse-and-supply-chain.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/04-reuse-and-supply-chain.md) 供应链背书卡片 |
+| 全景工程实战思维导图 | Agent + PM | 已完成 (定稿) | [`docs/现代 AI Agent 工程化研发实战思维导图.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/现代 AI Agent 工程化研发实战思维导图.md)（7 大支柱全景图） |
+| 项目安全与应急 SOP | Agent | 已完成 | [`docs/DEPLOYMENT_SECURITY.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/DEPLOYMENT_SECURITY.md)、[`docs/INCIDENT_RESPONSE.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/INCIDENT_RESPONSE.md) |
+| PM 技术词典与学习路线 | Agent | 已完成 | [`docs/GLOSSARY.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/GLOSSARY.md)（三信号、三阶段学习、白话类比、新增 GetFileAttributesEx 与绝对路径解析） |
+| 本地配置与资产清单 | Agent | 已完成 | [`docs/LOCAL_PROJECT_ASSETS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/LOCAL_PROJECT_ASSETS.md)（真实物理路径对照） |
 
 ---
 
 ## 三、 重要决策记录简报
-*(详细推演背景请查阅 `docs/DECISIONS.md`)*
+*(详细推演背景请查阅 [`docs/DECISIONS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/DECISIONS.md))*
 - **[ADR-001 规范入口选型]**：采用开放通用标准 `AGENTS.md` 作为主规范，`GEMINI.md` 保持别名兼容。
 - **[ADR-002 软约束硬拦截机制]**：规则文字兜底，依靠 pre-commit 钩子、白名单与环境物理隔离提供 100% 确定性。
 - **[ADR-003 PM 验收与防作弊门禁]**：确立 PM 验收三信号，严禁 Agent 为过测试而删改测试断言或关 lint。
