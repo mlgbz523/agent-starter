@@ -20,11 +20,14 @@
   11. 【跨环境路径解耦与状态机闭环】：主宪法源码内交叉引用彻底还原为项目相对路径（消除个人绝对路径硬编码），严格确立“源码相对、对话绝对”原则；补充小任务声明 `[STATE: EXECUTE]` 直接执行豁免闭环，根除微小任务死锁；解耦联网工具硬绑定并增加 stash 快照生命周期回收机制；
   12. 【Sandbox 纯净化剥离与全局自举脚手架部署】：将本地测试样例 `sandbox/` 从 Git 索引中安全解绑并加入 `.gitignore`（本地物理文件 100% 完整保留），彻底从远端 `agent-starter` 模板库中剥离，保持开源底座极致纯净；在用户全局配置中部署自举守门员规则，实现任意无规则工作区自动询问并拉取官方 Starter 闭环；
   13. 【冗余兼容文件彻底剥离与单源化】：经直连 Antigravity 官方文档确认 `AGENTS.md` 已为第一公民原生规范，彻底清理全局与工作区内的历史遗留别名 `GEMINI.md`，实现全系统单一真实源，消除双重解析开销；
-  14. 【路径 A 抗幻觉与长记忆体系全面落地】：装配 Mem0 长期记忆 MCP 节点（`mcp_config.json` 格式 100% 校验）；集成 Repomix 代码打包器并实测打包脚本（`.\scripts\pack_context.ps1` 退出码 0，生成 174KB 纯净上下文）；落地 [`.agents/rules/07-memory-bank-protocol.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/07-memory-bank-protocol.md) 物理阻断交接规约与 [`docs/PM_HANDBOOK.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/PM_HANDBOOK.md) 实战指南；全套测试 8/8 通过，Pre-commit 100% Passed。
+  14. 【路径 A 抗幻觉与长记忆体系全面落地】：装配 Mem0 长期记忆 MCP 节点（`mcp_config.json` 格式 100% 校验）；集成 Repomix 代码打包器并实测打包脚本（`.\scripts\pack_context.ps1` 退出码 0，生成 174KB 纯净上下文）；落地 [`.agents/rules/07-memory-bank-protocol.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/07-memory-bank-protocol.md) 物理阻断交接规约与 [`docs/PM_HANDBOOK.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/PM_HANDBOOK.md) 实战指南；全套测试 8/8 通过，Pre-commit 100% Passed；
+  15. 【专属私有云长记忆库 Cloudflare Second Brain 上线与 MCP 挂载】：通过 Cloudflare Serverless 架构（Workers + D1 + Vectorize + Workers AI）成功在自定义域名 [https://brain.28870721.xyz](https://brain.28870721.xyz) 独立部署专属私有第二大脑；原生配备完整 Web UI 可视化管理面板、23 张表关系型数据库及 20 个原生 MCP 工具；已在全局 [`mcp_config.json`](file:///C:/Users/15770/.gemini/config/mcp_config.json) 注册 `second-brain` 服务并就地导出全套工具 Schema，真实实测 brief/remember/recall 端到端调用 100% 成功，实现零成本、永久在线、自主可控的长记忆底座；
+  16. 【Cloudflare 第二大脑 Web 控制台全站汉化上线】：注入完整的 `I18N_ZH` 词表（覆盖全部 38 个模块全量键值），升级底层 i18n 引擎支持中文环境自动识别与导航栏“中文 / English / Italiano”一键切换按钮；通过 `wrangler deploy` 热更新发布至 [https://brain.28870721.xyz](https://brain.28870721.xyz)，线上实测页面、词表与 MCP 链路 100% 验证通过；
+  17. 【无感精准优化：开发习惯移入 Second Brain 与本地规则瘦身】：将 5 类高价值经验（Windows/Git 还原点实操、外部依赖探针命令、微观代码品味与注释哲学、供应链安全指标、PM 卡片 Markdown 模板库）成功持久化沉淀至 Cloudflare Second Brain，经端到端语义检索验证 100% 高分命中；本地规则文件净瘦身 78 行（模板冗余降低 75%），并在主宪法中植入 4 行轻量「Recall Hooks」意图路由；硬门禁（三红线、安全红线、状态机锁）100% 完好，全套自动化测试 8/8 通过，Pre-commit 100% Passed。
 - **进行中**：无。
 - **卡住了**：无。
 - **需要你决定的事**：无。
-- **👉 下一步你要做什么**：已具备完整的长记忆、代码压缩与新会话秒续能力。可随时发起正式业务开发或体验打包/记忆工具。
+- **👉 下一步你要做什么**：系统已完成全链路规则瘦身与记忆中枢自动化咬合，日常交互响应更快、注意力更聚焦。可随时发起正式业务需求，或在浏览器查看已沉淀的记忆账本。
 
 
 ---
@@ -55,6 +58,7 @@
 | Repomix 代码上下文打包器 | Agent | 已完成 | [`repomix.config.json`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/repomix.config.json) 与 [`scripts/pack_context.ps1`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/scripts/pack_context.ps1) |
 | Memory Bank 状态机规约 | Agent | 已完成 | [`.agents/rules/07-memory-bank-protocol.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/07-memory-bank-protocol.md) 物理阻断与秒续指南 |
 | Mem0 长期记忆服务节点 | Agent | 已完成 | 全局 [`mcp_config.json`](file:///C:/Users/15770/.gemini/config/mcp_config.json) 挂载完成并通过 JSON 校验 |
+| Cloudflare 私有记忆大脑 (`second-brain`) | Agent | 已上线 | 独立域名 [brain.28870721.xyz](https://brain.28870721.xyz) 边缘部署，集成 Web UI 看板与 20 个 MCP 原生工具 |
 
 ---
 

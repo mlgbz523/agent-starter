@@ -1,40 +1,47 @@
-# 任务计划：路径 A 抗幻觉与长记忆工程体系落地 (task_plan.md)
+# 任务计划：开发习惯移入 Second Brain 与规则瘦身 (task_plan.md)
 
 > **使用说明**：凡命中三红线的任务，Agent 必须先在本文件中拟定实施方案与 3~5 条大白话验收标准，经 PM 批准后方可修改业务代码。每步完成即时打勾更新。
 
 - **当前状态**：🟢 全部执行完毕，实测验证通过 (`[STATE: VERIFY]`)
 - **任务目标**：
-  1. 在当前 Antigravity 运行环境落地三大抗幻觉支柱（Mem0 长期记忆挂载、Repomix 代码打包器集成、Memory Bank 会话物理阻断规约）；
-  2. 实现长对话上下文防稀释、防中毒，跨会话无缝续接。
+  1. 将 5 类开发习惯、命令细节与模板沉淀至 Cloudflare Second Brain 并验证召回；
+  2. 在本地 `AGENTS.md` 植入 Recall Hooks 并精简底层实现说辞；
+  3. 瘦身 4 个规则切片（01, 03, 04, 05），保持硬门禁 100% 完好；
+  4. 完成全量自动化回归与交付验收。
 
 ---
 
-## 一、 PM 白话验收标准 (4 条)
+## 一、 PM 白话验收标准 (5 条)
 
-1. **Repomix 本地一键打包实测可用**：
-   - 运行项目内的打包命令 (`.\scripts\pack_context.ps1`) 能够一键将代码仓库安全、紧凑压缩为 XML 格式，自动剔除缓存、测试沙箱与无用大文件，CLI 退出码为 0。
-2. **Mem0 长期记忆服务接入就绪**：
-   - 在 Antigravity 全局 MCP 配置中注册 `mem0` 服务节点，且语法配置 100% 格式无误，不影响已有的 deepseek/free-search/cloudflare 插件。
-3. **Memory Bank 物理阻断规约入宪**：
-   - 在 `.agents/rules/07-memory-bank-protocol.md` 中明文确立长对话交接规则（15~20 轮或注意力衰退时主动落盘并引导开启新会话），并在 `PM_HANDBOOK.md` 中提供 PM 白话操作指南。
-4. **全套门禁回归持续全绿**：
-   - 核心测试套件 (`node --test`) 与 `pre-commit` 静态安全门禁 100% 通过（退出码 0）。
+1. **5 类先验记忆 100% 成功存入云端**：
+   - Git/Windows 还原点、依赖探针、微观注释风格、供应链阈值、PM 卡片模板 5 条记忆成功写入 D1 与 Vectorize。
+2. **语义召回验证全部高分命中**：
+   - 针对 5 类场景发起的检索 query，召回率 100%，相关度均在 90% 以上且带有 AI 洞察。
+3. **本地宪法植入轻量 Recall Hooks**：
+   - 在 `.agents/AGENTS.md` 中配置 4 条记忆中枢检索触发器，精简原本 50+ 行的底层 PowerShell 转义说辞。
+4. **4 个规则切片精简纯化**：
+   - 移除静态冗余的 Markdown 字面量与命令细节，保留外科手术式修改、限额盲读、退出码验证与审批流程硬门禁。
+5. **全量自动化测试与安全门禁 100% 通过**：
+   - `node --test` 8/8 通过，`pre-commit` 门禁 100% Passed。
 
 ---
 
 ## 二、 实施步骤与预估改动范围
 
-- [x] **步骤 1：工程化配置 Repomix 代码打包器**
-  - 创建 `repomix.config.json`（配置过滤规则与安全边界）；
-  - 创建 `scripts/pack_context.ps1` 一键执行脚本并实测运行（退出码 0，生成 174KB 纯净 XML 包）。
-- [x] **步骤 2：落地 Memory Bank 状态机防遗忘规约**
-  - 创建 [`.agents/rules/07-memory-bank-protocol.md`](.agents/rules/07-memory-bank-protocol.md)；
-  - 更新 [`.agents/AGENTS.md`](.agents/AGENTS.md) 索引；
-  - 更新 [`docs/PM_HANDBOOK.md`](docs/PM_HANDBOOK.md) 补充第十节交接指南。
-- [x] **步骤 3：配置全局 Mem0 长期记忆 MCP 节点**
-  - 更新 `C:\Users\15770\.gemini\config\mcp_config.json`，注入 `mem0` 节点；
-  - 格式校验 100% 语法无误，安全隔离。
-- [x] **步骤 4：全量自动化回归与交付汇报**
-  - 运行 `node --test`（8/8 全绿）；
-  - 运行 `pre-commit run --all-files`（100% Passed）；
-  - 更新 [`docs/PROGRESS.md`](docs/PROGRESS.md) 并呈报去伪存真验收矩阵。
+- [x] **步骤 1：持久化 5 类高价值记忆至 Second Brain**
+  - Git/Windows 还原点实操经验；
+  - 依赖真实性探针套路；
+  - 微观代码品味、极简哲学与精简注释规范；
+  - 外部依赖供应链安全准入标准；
+  - PM 决策卡片与交互标准 Markdown 模板库。
+- [x] **步骤 2：端到端语义召回能力实测**
+  - 实测 5 个场景 query 均能 100% 精确召回。
+- [x] **步骤 3：本地 `AGENTS.md` 瘦身与 Recall Hooks 植入**
+  - 植入 4 行轻量意图路由钩子；
+  - 精简 Git 命令底层转义描述。
+- [x] **步骤 4：规则切片（01, 03, 04, 05）精简与记忆中枢解耦**
+  - 瘦身 `01-architecture-and-modularity.md`、`03-hallucination-probes.md`、`04-reuse-and-supply-chain.md`、`05-pm-interaction-templates.md`。
+- [x] **步骤 5：全量自动化回归与交付报告**
+  - 运行 `node --test` 与 `pre-commit run --all-files`；
+  - 更新 `docs/PROGRESS.md` 与 `docs/DECISIONS.md`；
+  - 生成 `walkthrough.md` 交付报告。
