@@ -16,7 +16,8 @@
   7. 【顶层宪法内嵌三大核心卡片骨架】：[`.agents/AGENTS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/AGENTS.md) 正式嵌入【PM 业务决策请求】、【高危操作审批申请】、【交付完成声明去伪存真矩阵】，彻底根除智能体自编格式；
   8. 【全套门禁持续全绿】：核心测试 `node --test` (8/8 通过)，Pre-commit 门禁 100% 通过（退出码 0）；
   9. 【文件链接绝对协议铁律生效】：经 PM 审批通过，在 [`.agents/AGENTS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/AGENTS.md) 与 [`.agents/rules/05-pm-interaction-templates.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/05-pm-interaction-templates.md) 中明文确立文件链接绝对协议铁律，所有卡片与看板强制采用 `file:///` 协议绝对路径，彻底根除因 Webview 相对路径导致 Windows 底层 `GetFileAttributesEx` 报错；
-  10. 【规则治理深化与模型服从性加固】：三大长模板彻底下沉至子规则库，消除主宪法注意力稀释；顶层宪法确立工具调用首行状态机回显锁（`[STATE: PLAN|EXECUTE|VERIFY]`）与动态扩圈阻断（Scope Escalation）；单次读取配额平滑扩容至 60~100 行、单任务配额 200 行根除工具抖动；补全 PowerShell `'stash@{0}'` 转义规范；引入交付前 Git Diff 反思自检门禁（Inversion Check）；自动化测试 8/8 全绿，Pre-commit 100% 通过。
+  10. 【规则治理深化与模型服从性加固】：三大长模板彻底下沉至子规则库，消除主宪法注意力稀释；顶层宪法确立工具调用首行状态机回显锁（`[STATE: PLAN|EXECUTE|VERIFY]`）与动态扩圈阻断（Scope Escalation）；单次读取配额平滑扩容至 60~100 行、单任务配额 200 行根除工具抖动；补全 PowerShell `'stash@{0}'` 转义规范；引入交付前 Git Diff 反思自检门禁（Inversion Check）；自动化测试 8/8 全绿，Pre-commit 100% 通过；
+  11. 【跨环境路径解耦与状态机闭环】：主宪法源码内交叉引用彻底还原为项目相对路径（消除个人绝对路径硬编码），严格确立“源码相对、对话绝对”原则；补充小任务声明 `[STATE: EXECUTE]` 直接执行豁免闭环，根除微小任务死锁；解耦联网工具硬绑定并增加 stash 快照生命周期回收机制。
 - **进行中**：无。
 - **卡住了**：无。
 - **需要你决定的事**：无。
