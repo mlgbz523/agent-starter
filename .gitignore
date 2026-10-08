@@ -30,3 +30,6 @@ dist/
 
 # 本地测试样例与实验沙箱（保持 agent-starter 模版极致纯净）
 sandbox/
+
+# 上下文打包工具临时产物 (Repomix dumps)
+repomix-output.*

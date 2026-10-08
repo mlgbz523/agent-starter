@@ -144,3 +144,4 @@
 - **应急响应与出错 SOP**：[docs/INCIDENT_RESPONSE.md](docs/INCIDENT_RESPONSE.md)（线上故障人类运维执行回滚 + 仅库结构变更时执行 `down.sql`）
 - **PM 个人技术词典**：[docs/GLOSSARY.md](docs/GLOSSARY.md)（技术术语大白话索引与生活类比，Agent 自动维护）
 - **本地工程资产清单**：[docs/LOCAL_PROJECT_ASSETS.md](docs/LOCAL_PROJECT_ASSETS.md)（仅记录当前工作区真实物理路径与工具映射；项目技术栈与命令以 PROJECT_ENV.md 为准）
+- **状态机持久化与会话阻断**：[.agents/rules/07-memory-bank-protocol.md](.agents/rules/07-memory-bank-protocol.md)（长对话防稀释、15~20轮交接与冷启动恢复）

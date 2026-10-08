@@ -19,11 +19,13 @@
   10. 【规则治理深化与模型服从性加固】：三大长模板彻底下沉至子规则库，消除主宪法注意力稀释；顶层宪法确立工具调用首行状态机回显锁（`[STATE: PLAN|EXECUTE|VERIFY]`）与动态扩圈阻断（Scope Escalation）；单次读取配额平滑扩容至 60~100 行、单任务配额 200 行根除工具抖动；补全 PowerShell `'stash@{0}'` 转义规范；引入交付前 Git Diff 反思自检门禁（Inversion Check）；自动化测试 8/8 全绿，Pre-commit 100% 通过；
   11. 【跨环境路径解耦与状态机闭环】：主宪法源码内交叉引用彻底还原为项目相对路径（消除个人绝对路径硬编码），严格确立“源码相对、对话绝对”原则；补充小任务声明 `[STATE: EXECUTE]` 直接执行豁免闭环，根除微小任务死锁；解耦联网工具硬绑定并增加 stash 快照生命周期回收机制；
   12. 【Sandbox 纯净化剥离与全局自举脚手架部署】：将本地测试样例 `sandbox/` 从 Git 索引中安全解绑并加入 `.gitignore`（本地物理文件 100% 完整保留），彻底从远端 `agent-starter` 模板库中剥离，保持开源底座极致纯净；在用户全局配置中部署自举守门员规则，实现任意无规则工作区自动询问并拉取官方 Starter 闭环；
-  13. 【冗余兼容文件彻底剥离与单源化】：经直连 Antigravity 官方文档确认 `AGENTS.md` 已为第一公民原生规范，彻底清理全局与工作区内的历史遗留别名 `GEMINI.md`，实现全系统单一真实源，消除双重解析开销。
+  13. 【冗余兼容文件彻底剥离与单源化】：经直连 Antigravity 官方文档确认 `AGENTS.md` 已为第一公民原生规范，彻底清理全局与工作区内的历史遗留别名 `GEMINI.md`，实现全系统单一真实源，消除双重解析开销；
+  14. 【路径 A 抗幻觉与长记忆体系全面落地】：装配 Mem0 长期记忆 MCP 节点（`mcp_config.json` 格式 100% 校验）；集成 Repomix 代码打包器并实测打包脚本（`.\scripts\pack_context.ps1` 退出码 0，生成 174KB 纯净上下文）；落地 [`.agents/rules/07-memory-bank-protocol.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/07-memory-bank-protocol.md) 物理阻断交接规约与 [`docs/PM_HANDBOOK.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/PM_HANDBOOK.md) 实战指南；全套测试 8/8 通过，Pre-commit 100% Passed。
 - **进行中**：无。
 - **卡住了**：无。
 - **需要你决定的事**：无。
-- **👉 下一步你要做什么**：无（全系统 GEMINI.md 已安全清理，AGENTS.md 单一源稳固生效，随时下达新任务）。
+- **👉 下一步你要做什么**：已具备完整的长记忆、代码压缩与新会话秒续能力。可随时发起正式业务开发或体验打包/记忆工具。
+
 
 ---
 
@@ -50,8 +52,12 @@
 | 项目安全与应急 SOP | Agent | 已完成 | [`docs/DEPLOYMENT_SECURITY.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/DEPLOYMENT_SECURITY.md)、[`docs/INCIDENT_RESPONSE.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/INCIDENT_RESPONSE.md) |
 | PM 技术词典与学习路线 | Agent | 已完成 | [`docs/GLOSSARY.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/GLOSSARY.md)（三信号、三阶段学习、白话类比、新增 GetFileAttributesEx 与绝对路径解析） |
 | 本地配置与资产清单 | Agent | 已完成 | [`docs/LOCAL_PROJECT_ASSETS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/LOCAL_PROJECT_ASSETS.md)（真实物理路径对照） |
+| Repomix 代码上下文打包器 | Agent | 已完成 | [`repomix.config.json`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/repomix.config.json) 与 [`scripts/pack_context.ps1`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/scripts/pack_context.ps1) |
+| Memory Bank 状态机规约 | Agent | 已完成 | [`.agents/rules/07-memory-bank-protocol.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/07-memory-bank-protocol.md) 物理阻断与秒续指南 |
+| Mem0 长期记忆服务节点 | Agent | 已完成 | 全局 [`mcp_config.json`](file:///C:/Users/15770/.gemini/config/mcp_config.json) 挂载完成并通过 JSON 校验 |
 
 ---
+
 
 ## 三、 重要决策记录简报
 *(详细推演背景请查阅 [`docs/DECISIONS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/DECISIONS.md))*
