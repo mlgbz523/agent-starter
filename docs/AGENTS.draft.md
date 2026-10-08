@@ -1,4 +1,4 @@
-# AGENTS.md - WORKSPACE RUNTIME CONSTRAINTS
+# AGENTS.md - WORKSPACE RUNTIME CONSTRAINTS (DRAFT)
 
 > **工作区顶层宪法**：本文件是当前项目的最高优先级指令入口，适用于所有介入本工作区的 AI Agent。
 > **路径基准**：本文件内路径均相对于工作区根目录。
