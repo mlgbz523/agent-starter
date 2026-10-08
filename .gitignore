@@ -27,3 +27,6 @@ dist/
 
 # 日志
 *.log
+
+# 本地测试样例与实验沙箱（保持 agent-starter 模版极致纯净）
+sandbox/
