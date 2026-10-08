@@ -18,11 +18,12 @@
   9. 【文件链接绝对协议铁律生效】：经 PM 审批通过，在 [`.agents/AGENTS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/AGENTS.md) 与 [`.agents/rules/05-pm-interaction-templates.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/05-pm-interaction-templates.md) 中明文确立文件链接绝对协议铁律，所有卡片与看板强制采用 `file:///` 协议绝对路径，彻底根除因 Webview 相对路径导致 Windows 底层 `GetFileAttributesEx` 报错；
   10. 【规则治理深化与模型服从性加固】：三大长模板彻底下沉至子规则库，消除主宪法注意力稀释；顶层宪法确立工具调用首行状态机回显锁（`[STATE: PLAN|EXECUTE|VERIFY]`）与动态扩圈阻断（Scope Escalation）；单次读取配额平滑扩容至 60~100 行、单任务配额 200 行根除工具抖动；补全 PowerShell `'stash@{0}'` 转义规范；引入交付前 Git Diff 反思自检门禁（Inversion Check）；自动化测试 8/8 全绿，Pre-commit 100% 通过；
   11. 【跨环境路径解耦与状态机闭环】：主宪法源码内交叉引用彻底还原为项目相对路径（消除个人绝对路径硬编码），严格确立“源码相对、对话绝对”原则；补充小任务声明 `[STATE: EXECUTE]` 直接执行豁免闭环，根除微小任务死锁；解耦联网工具硬绑定并增加 stash 快照生命周期回收机制；
-  12. 【Sandbox 纯净化剥离与全局自举脚手架部署】：将本地测试样例 `sandbox/` 从 Git 索引中安全解绑并加入 `.gitignore`（本地物理文件 100% 完整保留），彻底从远端 `agent-starter` 模板库中剥离，保持开源底座极致纯净；在用户全局配置中部署 `workspace-governance-bootstrapper.md`，实现任意无规则工作区自动询问并拉取官方 Starter 闭环。
+  12. 【Sandbox 纯净化剥离与全局自举脚手架部署】：将本地测试样例 `sandbox/` 从 Git 索引中安全解绑并加入 `.gitignore`（本地物理文件 100% 完整保留），彻底从远端 `agent-starter` 模板库中剥离，保持开源底座极致纯净；在用户全局配置中部署自举守门员规则，实现任意无规则工作区自动询问并拉取官方 Starter 闭环；
+  13. 【冗余兼容文件彻底剥离与单源化】：经直连 Antigravity 官方文档确认 `AGENTS.md` 已为第一公民原生规范，彻底清理全局与工作区内的历史遗留别名 `GEMINI.md`，实现全系统单一真实源，消除双重解析开销。
 - **进行中**：无。
 - **卡住了**：无。
 - **需要你决定的事**：无。
-- **👉 下一步你要做什么**：无（远端模板已纯净化，全局自举守门员已全面生效，随时下达新任务）。
+- **👉 下一步你要做什么**：无（全系统 GEMINI.md 已安全清理，AGENTS.md 单一源稳固生效，随时下达新任务）。
 
 ---
 
