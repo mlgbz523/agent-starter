@@ -1,4 +1,4 @@
-<!-- notion: 未镜像 -->
+<!-- notion: https://app.notion.com/p/TODO-gitingest-gitdiagram-Archify-3f61f0467a648123854bcdeb7f9d7a3b | 镜像时间：2026-10-12 -->
 # TODO：接入"设计图 + 参考工具"规则（gitingest / gitdiagram / Archify）
 
 - 创建日期：2026-10-12
