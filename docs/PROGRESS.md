@@ -29,7 +29,7 @@
 ## 一、 当前全局开发状态
 - **当前开发阶段**：🟢 交付完成 · 全套 AI 教学参考书与实战体系就绪
 - **最后更新时间**：2026-10-10
-- **活跃开发分支**：`master`
+- **活跃开发分支**：`main`（已同步推送至 `origin/main`）
 - **本地还原点基准**：`7d7ffae`
 - **核心交付资产**：
   - 教学参考书全卷：[`ai-learning/教学参考书/README.md`](file:///e:/workSpace/notion/ai-learning/教学参考书/README.md)
