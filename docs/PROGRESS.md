@@ -7,61 +7,44 @@
 
 ## 📌 PM 专属进度速览区 (人类可读)
 - **已完成**：
-  1. 反重力目录迁移成功（C 盘已安全释放 3.1GB，传送门无缝生效）；
-  2. `sandbox/` 物理隔离体系全面就绪：扫雷（[`project_minesweeper/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/project_minesweeper/)）、2048（[`project_2048/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/project_2048/)）与全功能运维工具箱（[`project_toolkit/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/project_toolkit/)）三者完全自包含并列隔离，开箱即用；
-  3. 项目根目录彻底移除 `tools/` 文件夹，业务工程根目录达到极致纯净；
-  4. 【01~06 规则闭环与切片解耦】：同步 `01-architecture-and-modularity.md`，全量原规则镜像安全归档于 [`docs/archive/rules_backup_20261008/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/archive/rules_backup_20261008/)；
-  5. 【还原点机制解耦实测】：完成工作区干净（基线 Hash 记录与一键 reset/clean 归位）与工作区有改动（`git stash push -u` 按名称生成快照并保留工作区）双场景验证，保住未提交修改且零 Commit、零远程推送；
-  6. 【一手真理源工具链实测】：实测调用 `free-search` MCP 工具（`research`、`fetch_batch`、`compare`），100% 真实可用并一手穿透时效性；
-  7. 【顶层宪法内嵌三大核心卡片骨架】：[`.agents/AGENTS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/AGENTS.md) 正式嵌入【PM 业务决策请求】、【高危操作审批申请】、【交付完成声明去伪存真矩阵】，彻底根除智能体自编格式；
-  8. 【全套门禁持续全绿】：核心测试 `node --test` (8/8 通过)，Pre-commit 门禁 100% 通过（退出码 0）；
-  9. 【文件链接绝对协议铁律生效】：经 PM 审批通过，在 [`.agents/AGENTS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/AGENTS.md) 与 [`.agents/rules/05-pm-interaction-templates.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/05-pm-interaction-templates.md) 中明文确立文件链接绝对协议铁律，所有卡片与看板强制采用 `file:///` 协议绝对路径，彻底根除因 Webview 相对路径导致 Windows 底层 `GetFileAttributesEx` 报错；
-  10. 【规则治理深化与模型服从性加固】：三大长模板彻底下沉至子规则库，消除主宪法注意力稀释；顶层宪法确立工具调用首行状态机回显锁（`[STATE: PLAN|EXECUTE|VERIFY]`）与动态扩圈阻断（Scope Escalation）；单次读取配额平滑扩容至 60~100 行、单任务配额 200 行根除工具抖动；补全 PowerShell `'stash@{0}'` 转义规范；引入交付前 Git Diff 反思自检门禁（Inversion Check）；自动化测试 8/8 全绿，Pre-commit 100% 通过；
-  11. 【跨环境路径解耦与状态机闭环】：主宪法源码内交叉引用彻底还原为项目相对路径（消除个人绝对路径硬编码），严格确立“源码相对、对话绝对”原则；补充小任务声明 `[STATE: EXECUTE]` 直接执行豁免闭环，根除微小任务死锁；解耦联网工具硬绑定并增加 stash 快照生命周期回收机制；
-  12. 【Sandbox 纯净化剥离与全局自举脚手架部署】：将本地测试样例 `sandbox/` 从 Git 索引中安全解绑并加入 `.gitignore`（本地物理文件 100% 完整保留），彻底从远端 `agent-starter` 模板库中剥离，保持开源底座极致纯净；在用户全局配置中部署自举守门员规则，实现任意无规则工作区自动询问并拉取官方 Starter 闭环；
-  13. 【冗余兼容文件彻底剥离与单源化】：经直连 Antigravity 官方文档确认 `AGENTS.md` 已为第一公民原生规范，彻底清理全局与工作区内的历史遗留别名 `GEMINI.md`，实现全系统单一真实源，消除双重解析开销。
+  1. 【工作区治理自举成功】：成功从官方 Starter 库注入生产级宪法底座（`.agents/`、`docs/`、`.pre-commit-config.yaml`），本地 Git 还原点锁定为 `7d7ffae`；
+  2. 【AI 学习体系架构获批】：在 implementation plan 中明确“底座穿刺（不用会只要懂）+ 开源项目实战驱动 + 商业视野与防割韭菜”认知框架，PM 已确认通过；
+  3. 【认知罗盘《知识清单.md》交付】：完整建立 [`ai-learning/知识清单.md`](file:///e:/workSpace/notion/ai-learning/知识清单.md)，涵盖 4 大底层技术、4 大开源实战进阶及防割韭菜反脆弱指南；
+  4. 【行动纲领《实战计划.md》交付】：完整建立 [`ai-learning/实战计划.md`](file:///e:/workSpace/notion/ai-learning/实战计划.md)，拆解为 4 周 20 个工作日任务路线；
+  5. 【全套分周分节点《教学参考书》重磅交付】：建立 [`ai-learning/教学参考书/`](file:///e:/workSpace/notion/ai-learning/教学参考书/) 系列教材，包含全景导读及 4 卷完整教材，覆盖 D1 ~ D20 全部 20 个节点，包含保姆级原理、可运行核心代码、AI 助学 Prompt、排错指南与自测试炼：
+     - 总目录与全景导读：[`ai-learning/教学参考书/README.md`](file:///e:/workSpace/notion/ai-learning/教学参考书/README.md)
+     - 第一卷（D1~D5）：[`ai-learning/教学参考书/第一周_底座穿刺与模型本地点亮.md`](file:///e:/workSpace/notion/ai-learning/教学参考书/第一周_底座穿刺与模型本地点亮.md)
+     - 第二卷（D6~D10）：[`ai-learning/教学参考书/第二周_数据底座与个人专属RAG极简实现.md`](file:///e:/workSpace/notion/ai-learning/教学参考书/第二周_数据底座与个人专属RAG极简实现.md)
+     - 第三卷（D11~D15）：[`ai-learning/教学参考书/第三周_Agent智能体与开源工具协议.md`](file:///e:/workSpace/notion/ai-learning/教学参考书/第三周_Agent智能体与开源工具协议.md)
+     - 第四卷（D16~D20）：[`ai-learning/教学参考书/第四周_商业点子孵化与防割韭菜操盘手册.md`](file:///e:/workSpace/notion/ai-learning/教学参考书/第四周_商业点子孵化与防割韭菜操盘手册.md)
+  6. 【任务计划核销完毕】：[`docs/task_plan.md`](file:///e:/workSpace/notion/docs/task_plan.md) 4 项白话验收指标全部达成。
+  7. 【代码库智能理解双利器接入与规约闭环】：接入 GitDiagram MCP 服务，集成 Gitingest 方式 1 工具脚本，沉淀调用规则与手册，并将漏斗法则合入顶层宪法 [`AGENTS.md`](file:///e:/workSpace/notion/.agents/AGENTS.md)。
 - **进行中**：无。
 - **卡住了**：无。
 - **需要你决定的事**：无。
-- **👉 下一步你要做什么**：无（全系统 GEMINI.md 已安全清理，AGENTS.md 单一源稳固生效，随时下达新任务）。
+- **👉 下一步你要做什么**：自由翻阅全套教学参考书，或选定任一节点开启实际编码实验。
 
 ---
 
 ## 一、 当前全局开发状态
-- **当前开发阶段**：全量审查通过（LGTM）· 生产级 AGENTS.md 治理体系正式落地生效
-- **最后更新时间**：2026-10-09
-- **活跃开发分支**：`move_antigravity_working_directory`（已建立远端追踪 `origin/move_antigravity_working_directory`）
-- **远程仓库地址**：`https://github.com/mlgbz523/agent-starter.git`
-- **自动化门禁状态**：🟢 测试全绿 (`node --test`)、🟢 Pre-commit 全部通过、🟢 全端 100% 同步生效
+- **当前开发阶段**：🟢 交付完成 · 全套 AI 教学参考书与实战体系就绪
+- **最后更新时间**：2026-10-10
+- **活跃开发分支**：`master`
+- **本地还原点基准**：`7d7ffae`
+- **核心交付资产**：
+  - 教学参考书全卷：[`ai-learning/教学参考书/README.md`](file:///e:/workSpace/notion/ai-learning/教学参考书/README.md)
+  - 知识清单：[`ai-learning/知识清单.md`](file:///e:/workSpace/notion/ai-learning/知识清单.md)
+  - 实战计划：[`ai-learning/实战计划.md`](file:///e:/workSpace/notion/ai-learning/实战计划.md)
+  - 任务计划：[`docs/task_plan.md`](file:///e:/workSpace/notion/docs/task_plan.md)
 
 ---
 
 ## 二、 模块进展清单
 
-| 模块名称 | 负责人/Agent | 状态 | 交付物说明 |
-| :--- | :--- | :--- | :--- |
-| 工作区工程宪法 (`AGENTS.md`) | Agent + PM | 已完成 (定稿) | 包含导师机制、白话解释、Diff铁律、定向检索、2次熔断、三红线、复用边界、PM五大权限红线、**文件绝对协议铁律** |
-| 项目环境动态记录 | Agent + PM | 已就绪模板 | [`docs/PROJECT_ENV.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/PROJECT_ENV.md)（初始为“未确认项目”，技术栈与命令由 Agent 在 PM 确认后动态维护） |
-| Agent 测试基准样例 | Agent | 已隔离 | [`sandbox/`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/sandbox/)（扫雷游戏等样例物理隔离，附 README 严禁当作正式环境） |
-| PM 实战使用手册 | Agent | 已完成 | [`docs/PM_HANDBOOK.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/PM_HANDBOOK.md)（提需求、三段式演示、叫停信号、零技术决策） |
-| PM 交互卡片模板库 | Agent | 已完成 | [`.agents/rules/05-pm-interaction-templates.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/05-pm-interaction-templates.md)（决策卡片、审批卡片、三分法、**绝对直链规范**） |
-| 外部依赖安全细则 | Agent | 已完成 | [`.agents/rules/04-reuse-and-supply-chain.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/.agents/rules/04-reuse-and-supply-chain.md) 供应链背书卡片 |
-| 全景工程实战思维导图 | Agent + PM | 已完成 (定稿) | [`docs/现代 AI Agent 工程化研发实战思维导图.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/现代 AI Agent 工程化研发实战思维导图.md)（7 大支柱全景图） |
-| 项目安全与应急 SOP | Agent | 已完成 | [`docs/DEPLOYMENT_SECURITY.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/DEPLOYMENT_SECURITY.md)、[`docs/INCIDENT_RESPONSE.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/INCIDENT_RESPONSE.md) |
-| PM 技术词典与学习路线 | Agent | 已完成 | [`docs/GLOSSARY.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/GLOSSARY.md)（三信号、三阶段学习、白话类比、新增 GetFileAttributesEx 与绝对路径解析） |
-| 本地配置与资产清单 | Agent | 已完成 | [`docs/LOCAL_PROJECT_ASSETS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/LOCAL_PROJECT_ASSETS.md)（真实物理路径对照） |
-
----
-
-## 三、 重要决策记录简报
-*(详细推演背景请查阅 [`docs/DECISIONS.md`](file:///C:/Users/15770/.gemini/antigravity/worktrees/planProject/move_antigravity_working_directory/docs/DECISIONS.md))*
-- **[ADR-001 规范入口选型]**：采用开放通用标准 `AGENTS.md` 作为主规范，`GEMINI.md` 保持别名兼容。
-- **[ADR-002 软约束硬拦截机制]**：规则文字兜底，依靠 pre-commit 钩子、白名单与环境物理隔离提供 100% 确定性。
-- **[ADR-003 PM 验收与防作弊门禁]**：确立 PM 验收三信号，严禁 Agent 为过测试而删改测试断言或关 lint。
-- **[ADR-004 PM 零技术假设与决策卡片]**：Agent 必须为 PM 备齐决策条件（可撤销性、最坏后果、推荐值），PM 凭业务常识决策。
-
----
-
-## 四、 下一步待办事项 (Next Steps)
-- [ ] 1. 业务核心逻辑演进：基于 `sandbox/` 测试样例或新业务需求进行实操演练，验证“复述 → 判定三红线 → 方案 → 批准 → 三分法汇报”标准闭环链路；
-- [ ] 2. 在真实分支上实操演练一次上线前检查清单与回滚止血流程。
+| 模块名称 | 状态 | 交付物说明 |
+| :--- | :--- | :--- |
+| 工作区工程治理体系 | 已就绪 | [`.agents/AGENTS.md`](file:///e:/workSpace/notion/.agents/AGENTS.md) 生产级规则 |
+| 知识清单 (认知罗盘) | 已交付 | [`ai-learning/知识清单.md`](file:///e:/workSpace/notion/ai-learning/知识清单.md) 8 大模块全景拆解 |
+| 实战计划 (行动纲领) | 已交付 | [`ai-learning/实战计划.md`](file:///e:/workSpace/notion/ai-learning/实战计划.md) 4 周阶梯实操闭环 |
+| 全套教学参考书 (四卷成套) | 已交付 | [`ai-learning/教学参考书/`](file:///e:/workSpace/notion/ai-learning/教学参考书/) 20 个节点全覆盖保姆级教材 |
+| 任务计划与闭环看板 | 已同步 | [`docs/task_plan.md`](file:///e:/workSpace/notion/docs/task_plan.md) & [`docs/PROGRESS.md`](file:///e:/workSpace/notion/docs/PROGRESS.md) |

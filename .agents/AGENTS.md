@@ -57,6 +57,7 @@
    - 检索目标必须先使用终端/检索工具锁定关键词行号；
    - **单次读取限制在 60~100 行内（以单函数或独立语义块为限）**，严禁未定位直接读取全文件；
    - **每个任务内同一文件累计读取原则上不超过 200 行**；确需通读核心协议或架构文件，必须先向 PM 简要说明理由，严禁以多轮切片变相通读全文。
+   - **外部项目探索漏斗法则**：面对外部陌生开源项目时，强制遵循【宏观定焦 ➔ 模块收割】漏斗法则：必须先触发 GitDiagram MCP 获得全局架构，严禁盲目克隆；需深入理解子模块跨文件关联时，通过 Gitingest 定向打包上下文，严禁全库无节制吞吐（详见 [.agents/rules/07-codebase-intelligence-and-tools.md](.agents/rules/07-codebase-intelligence-and-tools.md)）。
 4. **纯净代码与精简注释 (Code Purity)**：
    - 代码仅保留必要的关键 Why 注释（重点解释复杂逻辑或特殊边界），严禁无意义的行级废话描述（如禁止写 `// 遍历列表`、`# 获取数据`）；代码标识符、配置参数与路径原样保留。
 5. **同类错误二次熔断与白话排错报告**：
@@ -144,3 +145,5 @@
 - **应急响应与出错 SOP**：[docs/INCIDENT_RESPONSE.md](docs/INCIDENT_RESPONSE.md)（线上故障人类运维执行回滚 + 仅库结构变更时执行 `down.sql`）
 - **PM 个人技术词典**：[docs/GLOSSARY.md](docs/GLOSSARY.md)（技术术语大白话索引与生活类比，Agent 自动维护）
 - **本地工程资产清单**：[docs/LOCAL_PROJECT_ASSETS.md](docs/LOCAL_PROJECT_ASSETS.md)（仅记录当前工作区真实物理路径与工具映射；项目技术栈与命令以 PROJECT_ENV.md 为准）
+- **代码库智能与工具规约**：[.agents/rules/07-codebase-intelligence-and-tools.md](.agents/rules/07-codebase-intelligence-and-tools.md)（GitDiagram 拓扑嗅探与 Gitingest 上下文收割）
+- **工具调用实战与指令手册**：[docs/AGENT_TOOL_INVOCATION_RULES.md](docs/AGENT_TOOL_INVOCATION_RULES.md)（GitDiagram MCP 与 Gitingest 详细命令手册）
