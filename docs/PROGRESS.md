@@ -28,11 +28,11 @@
   19. 【Second Brain 全量深度汉化与 GitHub 私人备份就绪】：全量完成 100% 深度中文本地化（彻底消除仪表盘增长图表、拓扑聚类、团队管理、洞察裁决、决策日志等全部 27 个模块共 714 项遗留英文死角）；在个人 GitHub 成功建立私人备份仓库 `mlgbz523/second-brain-cloudflare` 并配置双远程追踪（`origin` 私人库 + `upstream` 官方原版）；完成 Cloudflare 生产数据本地物理硬备份与 Workers 重新部署上线；
   20. 【Second Brain 记忆库深度治理与拓扑升维】：彻底消除重复/错乱标签（根治颜色代码 `#f4f1ea`、异构变体 `ui_design`、冗余平铺等），构建标准 Kebab-case 语义字典；知识网络连通关系（Edges）从 11 条跃升至 37 条，形成 5 大凝聚态主题聚类（消灭全库孤岛节点）；34 条核心记忆全量完好，Markdown 排版与间距升维；三维灾备（D1 线上生产库 + 本地 JSON/MD + GitHub 仓库）同步完成（Commit `2d39b545`）；
   21. 【规则体系全面重构与记忆/Notion规范落地】：基于 RULES-REVISION-TODO 与 MEMORY-NOTION-RULES-PATCH 完成全局 AGENTS.md + 工作区宪法 + 01~09 规则切片全面重构与 DESIGN.md 接入；确立“代码 > 本地 docs/ > 记忆库”事实链与 Notion 单向镜像门禁；记忆库读写时机锁定且严禁静默入库；核心门禁纯本地自洽；创建 `docs/_pending/` 降级目录；全套切片 frontmatter 与交叉引用校验 100% 通过，已推送远端（Commit `7194f4b`）；
-  22. 【设计图先行业务规则与参考工具规范接入】：基于 TODO-design-tools-integration，在 02 中插入 §1-B（大功能先出设计图强制条款），新建 10-design-and-reference-tools.md，在 04 追加专项条款，.gitignore 追加 docs/_ref/；T0~T5 范围检查 100% 通过（基线 Commit：`7194f4b`）。
-- **进行中**：T6 工具安装审批（gitingest / archify）。
+  22. 【设计图先行业务规则与参考工具规范接入】：基于 TODO-design-tools-integration，在 02 中插入 §1-B（大功能先出设计图强制条款），新建 10-design-and-reference-tools.md，在 04 追加专项条款，.gitignore 追加 docs/_ref/；T0~T5 范围检查 100% 通过；T6 获批并在 sandbox 隔离安装 gitingest (0.3.1) 与 Archify (doctor 全部 ok)；环境变量 `ARCHIFY_UPDATE_CHECK_DISABLED=1` 已配置（基线 Commit：`22038da`）。
+- **进行中**：无。
 - **卡住了**：无。
-- **需要你决定的事**：确认是否批准在 sandbox 隔离安装 gitingest 与 Archify。
-- **👉 下一步你要做什么**：审阅并拍板 T6【PM 决策卡片】（是否在 sandbox 试用两个工具）。
+- **需要你决定的事**：无。
+- **👉 下一步你要做什么**：补充案（T0~T7）已全量闭环落地！随时可以按新规则进行大功能开发或沙盒试用。
 
 
 ---

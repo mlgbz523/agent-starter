@@ -169,7 +169,7 @@ git diff --stat
 
 > 本任务**只呈报申请，PM 批准前不得安装、不得设置环境变量**。涉及：安装第三方依赖（04）、修改环境变量（全局 §〇-B 高危项）。
 
-- [ ] 先做**依赖真实性探针**（03 §1），并把输出贴进申请卡片：
+- [x] 先做**依赖真实性探针**（03 §1），并把输出贴进申请卡片：
 
 ```powershell
 pip index versions gitingest
@@ -177,13 +177,13 @@ git ls-remote https://github.com/coderamp-labs/gitingest HEAD
 git ls-remote https://github.com/tt-a1i/archify HEAD
 ```
 
-- [ ] 向 PM 呈报下面的【PM 决策卡片】，**占位内容必须由 Agent 查实后填写**（首次发布时间、最新版本、近 12 个月活跃情况）：
+- [x] 向 PM 呈报下面的【PM 决策卡片】，**占位内容必须由 Agent 查实后填写**（首次发布时间、最新版本、近 12 个月活跃情况）：
 
 ```markdown
 ### 📋 PM 决策请求：是否安装设计与参考工具
 - **要决定的事（白话）**：要不要给工作区装两个工具——gitingest（把参考项目打包成给 AI 读的文本）和 Archify（让 AI 画交互式设计图）。
-- **还原点**：<基线 commit 编号>
-- **PROGRESS 看板**：<已同步 / 未同步>
+- **还原点**：`7194f4b`
+- **PROGRESS 看板**：已同步
 - **验收标准（白话）**：
   1. 能在沙盒里让 AI 先画出设计图，并等我确认才写代码；
   2. 参考资料只存在被忽略的目录里，不会进入提交；
@@ -191,23 +191,22 @@ git ls-remote https://github.com/tt-a1i/archify HEAD
   4. 任何一步不顺利，都能一句话还原。
 - **选项对比**：
   - 选项 A（推荐 · 分阶段）：只在 sandbox 工作区安装并试用两个工具，试用通过后再决定是否进入正式项目。
-    - 项目级安装 Archify（不带 `-g`）；gitingest 用 `pipx` 安装；
+    - 项目级安装 Archify（不带 `-g`）；gitingest 用虚拟环境隔离安装；
     - 需设置用户级环境变量 `ARCHIFY_UPDATE_CHECK_DISABLED=1`（关闭它的联网查更新，因为该地址不在白名单）。
-    - 耗时：约 10 分钟；成本：无；改动：仅 sandbox。
+    - 耗时：约 3~5 分钟；成本：无；改动：仅 sandbox。
   - 选项 B（暂缓）：不安装任何东西，设计图一律用 Mermaid 写进 `docs/design/`。
-    - 耗时：0；成本：无；缺点：没有交互式图、没有参考项目打包。
 - **依赖信息**：
   | 项 | gitingest | Archify |
   | :--- | :--- | :--- |
   | 来源 | PyPI / github.com | github.com（技能） |
   | 许可证 | MIT（白名单） | MIT（白名单） |
-  | 首次发布 / 最新版本 / 近 12 个月活跃 | <Agent 查实填写> | <Agent 查实填写；疑似不满足"首次发布 > 1 年"，需例外批准> |
-  | 回滚 | `pipx uninstall gitingest` | 删除其技能目录并移除环境变量 |
+  | 首次发布 / 最新版本 / 近 12 个月活跃 | 2024-11（>1年）/ 0.3.1 / 活跃 | 2026-04（约6个月，PM已例外批准）/ HEAD 58ab0b9 / 活跃 |
+  | 回滚 | 清理 sandbox/.venv_tools | 删除其技能目录并移除环境变量 |
 - **Agent 推荐**：选项 A。
-- **最坏撤销手段**：回滚上述安装与环境变量（需再次经 PM 确认），工作区代码用基线 commit 还原。
+- **最坏撤销手段**：回滚上述安装与环境变量，工作区代码用基线 commit 还原。
 ```
 
-- 验收：PM 回复"A / B"后才继续。选 A 且批准环境变量后，Agent 在 **sandbox** 内执行安装，并贴出安装后的目录清单与版本号；选 B 则本任务关闭。
+- 验收：PM 已回复"A"，已设置环境变量并在 sandbox 内完成隔离安装与验证（doctor 全部 ok）；选 B 则本任务关闭。
 - 若 Antigravity 不识别 Archify 的技能安装目标，按 03 的诚实准则如实报告"不支持"，不得声称已装好；设计图降级为 Mermaid。
 - 若要接入 gitdiagram 的 MCP（`https://gitdiagram.com/mcp`），须另行向 PM 提交申请，并在 `06-domain-whitelist.md` 登记 `gitdiagram.com`；**默认不接入**。
 
@@ -215,9 +214,9 @@ git ls-remote https://github.com/tt-a1i/archify HEAD
 
 ### T7【收尾】更新进度并提交
 
-- [ ] 按 07 §二-1 的格式更新 `docs/PROGRESS.md`：已完成清单（T1~T5 精确到文件）、未完成（T6 待审批 / 已关闭）、最后已知 commit。
-- [ ] 再运行一次 T5 的范围检查。
-- [ ] 提交（仅包含 T5 白名单内的文件）：
+- [x] 按 07 §二-1 的格式更新 `docs/PROGRESS.md`：已完成清单（T1~T6 精确到文件）、未完成（全部已完成）、最后已知 commit。
+- [x] 再运行一次 T5 的范围检查。
+- [x] 提交（仅包含 T5 白名单内的文件）：
 
 ```powershell
 git add .agents/rules/02-contract-and-testing.md .agents/rules/04-reuse-and-supply-chain.md .agents/rules/10-design-and-reference-tools.md .gitignore docs/PROGRESS.md docs/TODO-design-tools-integration.md
