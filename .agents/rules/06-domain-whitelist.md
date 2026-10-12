@@ -16,6 +16,7 @@ always_on: false
 | `pypi.org` | Python 官方依赖元数据检索 | Agent / PM |
 | `114514.91brain.28870721.xyz` | Second Brain 私有记忆中枢 (MCP) | Agent |
 | `api.notion.com` | Notion 知识库读写 (MCP) | Agent |
+| `gitdiagram.com` | 公开开源仓库架构图快速浏览与调研 (MCP) | Agent |
 
 ### MCP 服务与白名单约束规则
 - MCP 服务（`second-brain`、`notion` 等）的所有外部网络请求**同样受本白名单硬性约束**；
