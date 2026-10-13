@@ -7,7 +7,12 @@ always_on: true
 # 03-Hallucination Probes
 
 ## 1. 依赖真实性探针 (预检门禁)
-- 外部依赖引入前必须执行终端真实性探针。具体语言命令套路按需从 Second Brain 召回；若召回失败，Agent 必须停下并向 PM 报告“记忆召回失败，请提供相关经验或允许跳过”，严禁跳过门禁默认放行。
+- 外部依赖引入前必须执行终端真实性探针。**以下本地基线不依赖任何外部服务**：
+  - 核对包名拼写与官方仓库链接，防止仿冒包（typosquatting）；
+  - 核对目标版本真实存在，并查看最近发布时间与许可证；
+  - Node.js 参考：`npm view <包名> name version time.modified license repository.url`；Python 参考：`pip index versions <包名>`（需较新的 pip，属实验性命令）或读取 `pypi.org/pypi/<包名>/json`；
+  - 上述命令须在本机实测可用后记录到 `docs/PROJECT_ENV.md`，严禁凭经验猜测；
+  - 更多语言或生态的经验可按需从 Second Brain 补充召回，仅作参考。召回失败时，仅按本节基线执行并告知 PM“记忆库不可用，本次仅按基线探针”，**不得因此停机**；基线探针任一项不通过，则停下向 PM 报告，严禁默认放行。
 
 ## 2. 交付红线
 - 严禁留空实现（`// TODO` / `pass`）。

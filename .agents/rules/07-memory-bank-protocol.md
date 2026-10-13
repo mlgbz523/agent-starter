@@ -49,3 +49,4 @@ always_on: false
 1. **第一优先级读取**：静默读取 `docs/PROGRESS.md` 顶部的【进度速览区】；
 2. **确认环境基线**：比对 `PROGRESS.md` 中记录的最后 Commit 编号与当前 `git rev-parse --short HEAD`；若不一致，告知 PM“工作区在上次会话后有外部改动”；再运行 `git status -s` 确认工作区是否干净；
 3. **一句话唤醒汇报**：“*已根据 `docs/PROGRESS.md` 完成上下文复原，当前停留在【XXX 任务】，准备执行【YYY】，是否继续？*”
+4. **待补事项检查**：若 `docs/_pending/` 下除 `.gitkeep` 外还有文件，在唤醒汇报后追加一句，询问 PM 是否补写。

@@ -14,12 +14,16 @@ always_on: false
 | `github.com` | 官方开源仓库拉取 | Agent / PM |
 | `registry.npmjs.org` | Node.js 官方依赖元数据检索 | Agent / PM |
 | `pypi.org` | Python 官方依赖元数据检索 | Agent / PM |
-| `114514.91brain.28870721.xyz` | Second Brain 私有记忆中枢 (MCP) | Agent |
 | `api.notion.com` | Notion 知识库读写 (MCP) | Agent |
 | `gitdiagram.com` | 公开开源仓库架构图快速浏览与调研 (MCP) | Agent |
 
 ### MCP 服务与白名单约束规则
 - MCP 服务（`second-brain`、`notion` 等）的所有外部网络请求**同样受本白名单硬性约束**；
-- MCP 配置中使用的端点域名必须在本白名单中明确注册，未经注册的外部接口一律视为未授权数据外发。
+- MCP 配置中使用的端点域名必须在本白名单或本地补充文件中明确注册，未经注册的外部接口一律视为未授权数据外发；
+- **私有端点不得写入本文件**（本文件会随模板公开分发）：自建服务（如私有记忆库）的域名统一登记在本地补充文件 `.agents/rules/06-domain-whitelist.local.md`，该文件已加入 `.gitignore`，不提交仓库。
+
+### 官方文档站点（一手核验）
+- 为满足“外部信息一手核验”要求，Agent 首次访问某个**官方文档主域名**（官方文档站或官方发布页）时，须先用一句话向 PM 报备域名与用途，获同意后本会话内可继续访问；
+- 严禁访问非官方二手站点，严禁扫描内网。
 
 *注：若需访问新域名，需向 PM 提交申请卡片，获批后更新此文件。*
