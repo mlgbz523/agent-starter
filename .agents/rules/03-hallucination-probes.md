@@ -1,15 +1,19 @@
 ---
 description: 依赖探针与防假闭环命令规范
 globs: ["**/*"]
-always_on: false
+always_on: true
 ---
 
 # 03-Hallucination Probes
 
-## 1. 依赖真实性探针 (终端预检命令)
-- **Python**: `python -c "import pkg_name; print(hasattr(pkg_name, 'expected_method'))"`
-- **Node.js**: `npm view pkg_name version`
+## 1. 依赖真实性探针 (预检门禁)
+- 外部依赖引入前必须执行终端真实性探针。具体语言命令套路按需从 Second Brain 召回；若召回失败，Agent 必须停下并向 PM 报告“记忆召回失败，请提供相关经验或允许跳过”，严禁跳过门禁默认放行。
 
 ## 2. 交付红线
 - 严禁留空实现（`// TODO` / `pass`）。
-- 每个步骤必须附带一行可复现的 CLI 自动化验证命令。
+- 每个步骤必须附带一行可复现的 CLI 自动化验证命令且退出码必须为 0。
+- 🚫 **命令必须具备真实失败能力**：不得使用 `|| true`、不得吞退出码、不得仅用 `echo` 伪造通过；必须贴出真实命令输出，不得仅写“退出码 0”。
+
+## 3. 界面与文档任务的验证方式
+- **界面任务**：以截图路径或浏览器检查工具输出作为证据；若项目根目录存在 `DESIGN.md`，交付前须对照其 UI 自检清单逐项核验；
+- **文档任务**：以真实文件 Git Diff 或渲染预览作为证据。

@@ -1,0 +1,25 @@
+---
+description: 界面设计标准与 DESIGN.md 遵循协议
+globs: ["**/*.{tsx,jsx,vue,css,scss,html,svelte}"]
+always_on: false
+---
+
+# 09-UI Design Standard
+
+> **核心原则**：界面任务必须以项目根目录 `DESIGN.md` 为唯一视觉真理源。
+
+## 1. 前置对齐 (Design-First Alignment)
+- 界面任务开始前必须先读取项目根目录 `DESIGN.md`（若不存在则告知 PM 并建议初始化创建）；
+- 读取后向 PM 简要复述风格理解（1~2 句话），等 PM 确认后再动手。
+
+## 2. Token 先行 (Tokens Before Pages)
+- 先确认/建立 Design Tokens（颜色、字体、间距、圆角），再编写具体页面与组件；
+- Token 变更必须全局生效，严禁在单个组件中散落硬编码覆盖。
+
+## 3. 交付自检清单 (UI Delivery Checklist)
+交付界面任务前，Agent 须对照以下清单逐项核销：
+- [ ] **颜色体系**：是否全部来自 Token 或 `DESIGN.md` 调色板？
+- [ ] **排版标尺**：字体与字号是否严格匹配设计系统层级？
+- [ ] **间距节奏**：内外边距是否遵循标准基准间距标尺？
+- [ ] **响应式适配**：是否覆盖移动端与桌面端主流断点？
+- [ ] **暗色模式**：是否按 `DESIGN.md` 规范完成对应适配？
