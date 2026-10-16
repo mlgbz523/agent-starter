@@ -36,3 +36,8 @@ repomix-output.*
 
 # 参考资料与外部分析目录
 docs/_ref/
+
+# 本地临时与测试产物
+scratch/
+.wrangler/
+.agents/mcp_config.json*
