@@ -1,6 +1,7 @@
 ---
 description: Notion 知识库镜像的治理门禁与数据安全
-globs: ["docs/**"]
+globs: "docs/**"
+trigger: model_decision
 always_on: false
 ---
 

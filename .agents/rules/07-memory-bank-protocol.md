@@ -1,6 +1,7 @@
 ---
 description: 长任务的状态持久化、归档和会话交接流程
-globs: ["docs/PROGRESS.md", "docs/DECISIONS.md", "docs/_pending/**", "docs/**", ".agents/**"]
+globs: "docs/PROGRESS.md, docs/DECISIONS.md, docs/_pending/**, docs/**, .agents/**"
+trigger: model_decision
 always_on: false
 ---
 

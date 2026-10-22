@@ -1,6 +1,7 @@
 ---
 description: 软件任务中的可证伪验证、依赖真实性探针和防虚假完成
-globs: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.py", "**/*.json", "**/*.toml", "**/*.yaml", "**/*.yml", "**/*test*", "**/*spec*", "**/package.json", "**/pyproject.toml", "**/requirements*.txt"]
+globs: "**/*.ts, **/*.tsx, **/*.js, **/*.jsx, **/*.py, **/*.json, **/*.toml, **/*.yaml, **/*.yml, **/*test*, **/*spec*, **/package.json, **/pyproject.toml, **/requirements*.txt"
+trigger: model_decision
 always_on: false
 ---
 

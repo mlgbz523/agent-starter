@@ -1,6 +1,7 @@
 ---
 description: 启用域名白名单的受限工作区网络访问政策
-globs: ["**/*"]
+globs: "**/*"
+trigger: model_decision
 always_on: false
 ---
 

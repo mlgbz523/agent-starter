@@ -1,6 +1,7 @@
 ---
 description: 代码复用、新依赖准入与供应链风险审查
-globs: ["**/package.json", "**/package-lock.json", "**/pnpm-lock.yaml", "**/yarn.lock", "**/pyproject.toml", "**/poetry.lock", "**/requirements*.txt", "**/Cargo.toml", "**/Cargo.lock", "**/go.mod", "**/go.sum", "**/Gemfile", "**/Gemfile.lock", "**/composer.json", "**/composer.lock"]
+globs: "**/package.json, **/package-lock.json, **/pnpm-lock.yaml, **/yarn.lock, **/pyproject.toml, **/poetry.lock, **/requirements*.txt, **/Cargo.toml, **/Cargo.lock, **/go.mod, **/go.sum, **/Gemfile, **/Gemfile.lock, **/composer.json, **/composer.lock"
+trigger: model_decision
 always_on: false
 ---
 

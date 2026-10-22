@@ -1,6 +1,7 @@
 ---
 description: 外部参考项目、架构图和里程碑复盘工具的使用边界
-globs: ["docs/design/**", "docs/_ref/**"]
+globs: "docs/design/**, docs/_ref/**"
+trigger: model_decision
 always_on: false
 ---
 

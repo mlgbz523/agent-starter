@@ -1,6 +1,7 @@
 ---
 description: 重大决策、高风险操作和复杂交付的交互模板
-globs: ["docs/**", ".agents/**"]
+globs: "docs/**, .agents/**"
+trigger: model_decision
 always_on: false
 ---
 

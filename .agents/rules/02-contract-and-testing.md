@@ -1,6 +1,7 @@
 ---
 description: 软件变更的契约、计划、测试和验收门禁
-globs: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.py", "**/*.rs", "**/*.go", "**/*.java", "**/*.cs", "**/*.json", "**/*.toml", "**/*.yaml", "**/*.yml", "**/*test*", "**/*spec*", "**/package.json", "**/pyproject.toml", "**/Cargo.toml", "**/go.mod"]
+globs: "**/*.ts, **/*.tsx, **/*.js, **/*.jsx, **/*.py, **/*.rs, **/*.go, **/*.java, **/*.cs, **/*.json, **/*.toml, **/*.yaml, **/*.yml, **/*test*, **/*spec*, **/package.json, **/pyproject.toml, **/Cargo.toml, **/go.mod"
+trigger: model_decision
 always_on: false
 ---
 

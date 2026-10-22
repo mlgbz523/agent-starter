@@ -1,6 +1,7 @@
 ---
 description: UI 任务的设计系统对齐与界面验收协议
-globs: ["**/*.tsx", "**/*.jsx", "**/*.vue", "**/*.css", "**/*.scss", "**/*.html", "**/*.svelte"]
+globs: "**/*.tsx, **/*.jsx, **/*.vue, **/*.css, **/*.scss, **/*.html, **/*.svelte"
+trigger: model_decision
 always_on: false
 ---
 

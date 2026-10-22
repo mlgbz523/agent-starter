@@ -1,6 +1,7 @@
 ---
 description: 软件架构、模块职责、精准差异与代码阅读规则
-globs: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.py", "**/*.rs", "**/*.go", "**/*.java", "**/*.cs", "**/*.cpp", "**/*.h", "**/*.php", "**/*.rb", "**/*.swift", "**/*.kt", "**/*.vue", "**/*.svelte", "**/*.dart", "**/*.ex", "**/*.exs", "**/*.scala", "**/*.lua", "**/*.sh", "**/*.ps1", "**/*.sql"]
+globs: "**/*.ts, **/*.tsx, **/*.js, **/*.jsx, **/*.py, **/*.rs, **/*.go, **/*.java, **/*.cs, **/*.cpp, **/*.h, **/*.php, **/*.rb, **/*.swift, **/*.kt, **/*.vue, **/*.svelte, **/*.dart, **/*.ex, **/*.exs, **/*.scala, **/*.lua, **/*.sh, **/*.ps1, **/*.sql"
+trigger: model_decision
 always_on: false
 ---
 

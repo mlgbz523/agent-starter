@@ -1,6 +1,7 @@
 ---
 description: 项目环境文档 PROJECT_ENV.md 的生命周期管理
-globs: ["docs/PROJECT_ENV.md"]
+globs: "docs/PROJECT_ENV.md"
+trigger: model_decision
 always_on: false
 ---
 

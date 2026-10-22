@@ -1,6 +1,7 @@
 ---
 description: 全场景 Agent 技能发现、能力评估、安装审查与生命周期管理
-globs: ["**/*"]
+globs: "**/*"
+trigger: model_decision
 always_on: false
 ---
 

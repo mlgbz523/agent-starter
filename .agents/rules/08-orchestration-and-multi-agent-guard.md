@@ -1,6 +1,7 @@
 ---
 description: 多 Agent 协作和深度代理任务的收敛、约束继承与重试限制
-globs: ["**/*"]
+globs: "**/*"
+trigger: model_decision
 always_on: false
 ---
 
